@@ -13,3 +13,5 @@ jobs:
             - run: git add index.html
             - run: git commit -m "add index.html"
             - run: git push
+            env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
