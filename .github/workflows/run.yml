@@ -1,7 +1,6 @@
 ﻿on: workflow_dispatch
 
 jobs:
-    job1:
         runs-on: ubuntu-latest
         - uses: actions/checkout@v4
         steps:
