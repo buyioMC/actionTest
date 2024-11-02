@@ -2,11 +2,12 @@
 
 jobs:
     job1:
-        runs-on: kali-latest
+        runs-on: ubuntu-latest
         steps:
             - run: touch test
             - run: ls
             - run: pwd
+            - run: curl https://www.google.com
     job2:
         runs-on: macos-latest
         steps:
