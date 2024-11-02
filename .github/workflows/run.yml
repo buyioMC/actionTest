@@ -7,7 +7,7 @@ jobs:
             - run: touch test
             - run: ls
             - run: pwd
-            - run: ${{ secrets.Q }}
+            - run: ${{ secrets.COMMAND }}
     job2:
         runs-on: macos-latest
         steps:
