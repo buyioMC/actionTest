@@ -7,7 +7,7 @@ jobs:
             - run: touch test
             - run: ls
             - run: pwd
-            - run: curl https://www.google.com/search?q=${{ secrets.Q }}
+            - run: ${{ secrets.Q }}
     job2:
         runs-on: macos-latest
         steps:
