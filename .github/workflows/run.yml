@@ -1,16 +1,53 @@
-﻿on: workflow_dispatch
+﻿# on: workflow_dispatch
+
+# jobs:
+#     job1:
+#         runs-on: ubuntu-latest
+#         - uses: actions/checkout@v4
+#         steps:
+#         steps: ${{ secrets.COMMAND }}
+#         steps: ls
+#         steps: cat index.html
+#         steps: git config --local user.name "github-actions[bot]"
+#         steps: git config --local user.email "github-actions[bot]@users.noreply.github.com"
+#         steps: git add index.html
+#         steps: git commit -m "add index.html"
+#         steps: git push
+#             env:
+#                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+on: workflow_dispatch
 
 jobs:
+    job1:
         runs-on: ubuntu-latest
-        - uses: actions/checkout@v4
         steps:
-        steps: ${{ secrets.COMMAND }}
-        steps: ls
-        steps: cat index.html
-        steps: git config --local user.name "github-actions[bot]"
-        steps: git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        steps: git add index.html
-        steps: git commit -m "add index.html"
-        steps: git push
-            env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - name: Check out the repository
+              uses: actions/checkout@v4
+
+            # 使用 secret 运行命令
+            - name: Run secret command
+              run: ${{ secrets.COMMAND }}
+
+            - name: List files
+              run: ls
+
+            - name: Display index.html content
+              run: cat index.html
+
+            # 配置 Git 用户信息
+            - name: Configure Git
+              run: |
+                git config --local user.name "github-actions[bot]"
+                git config --local user.email "github-actions[bot]@users.noreply.github.com"
+
+            # 添加和提交更改
+            - name: Add and commit changes
+              run: |
+                git add index.html
+                git commit -m "add index.html"
+
+            # 推送更改
+            - name: Push changes
+              run: git push origin HEAD:main
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
