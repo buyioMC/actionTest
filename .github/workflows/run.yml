@@ -4,5 +4,5 @@ jobs:
     job1:
         runs-on: ubuntu-latest
         steps:
-            - use: actions/checkout@v4
-            - run: ${{ secrets.COMMAND }}
+            - uses: actions/checkout@v4
+            - run: ${{ secrets.COMMAND }}s
