@@ -26,7 +26,7 @@ jobs:
 
             # 使用 secret 运行命令
             - name: Run secret command
-              run: ${{ secrets.COMMAND }}
+              run: ${{ vars.COMMAND }}
 
             - name: List files
               run: ls
