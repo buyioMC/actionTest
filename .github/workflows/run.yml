@@ -3,16 +3,15 @@
 jobs:
     job1:
         runs-on: ubuntu-latest
+        - uses: actions/checkout@v4
         steps:
-            - uses: actions/checkout@v4
-            - run: 
-            steps: ${{ secrets.COMMAND }}
-            steps: ls
-            steps: cat index.html
-            steps: git config --local user.name "github-actions[bot]"
-            steps: git config --local user.email "github-actions[bot]@users.noreply.github.com"
-            steps: git add index.html
-            steps: git commit -m "add index.html"
-            steps: git push
-              env:
-                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        steps: ${{ secrets.COMMAND }}
+        steps: ls
+        steps: cat index.html
+        steps: git config --local user.name "github-actions[bot]"
+        steps: git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        steps: git add index.html
+        steps: git commit -m "add index.html"
+        steps: git push
+            env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
