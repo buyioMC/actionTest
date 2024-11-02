@@ -4,6 +4,7 @@ jobs:
     job1:
         runs-on: ubuntu-latest
         steps:
+            - run: touch test
             - run: ls
             - run: pwd
     job2:
