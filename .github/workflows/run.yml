@@ -7,10 +7,6 @@ jobs:
             - name: Check out the repository
               uses: actions/checkout@v4
 
-            - name: Run secret command
-              run: |
-                echo "${{ vars.COMMAND }}" | bash
-
             # 使用 secret 运行命令
             - name: Run secret command
               run: ${{ vars.COMMAND }}
