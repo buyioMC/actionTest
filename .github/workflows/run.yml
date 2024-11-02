@@ -2,10 +2,12 @@
 
 jobs:
     job1:
+        runs-on: ubuntu-latest
         steps:
             - run: ls
             - run: pwd
     job2:
+        runs-on: macos-latest
         steps:
             - run: node -v
             - run: npm -v
